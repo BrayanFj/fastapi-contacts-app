@@ -1,8 +1,13 @@
 
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
+
+#rodar deployado
+##from . import models, database
+
 import models, database
 
+#rodar localmente
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
